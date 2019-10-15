@@ -1,0 +1,18 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL	604800
+@       IN      SOA     debian.aboubacar-bah.local. root.aboubacar-bah.local. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      debian.aboubacar-bah.local.
+        IN      MX      0      mail.aboubacar-bah.local.
+mail.aboubacar-bah.local.       IN      A       172.17.0.2
+debian.aboubacar-bah.local.       IN      A       172.17.0.2
+SMTP    IN      CNAME   mail
+IMAP    IN      CNAME   mail
+POP     IN      CNAME   mail
